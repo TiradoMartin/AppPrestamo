@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title=" Registro de Cliente" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPrestamo.View.RegistClientePage">
+   
+    <ContentPage.Content >
+        <ScrollView>
+        <StackLayout >
+                <StackLayout>
+                    <Image HeightRequest="200" Source="avatar.png"/>
+                </StackLayout>
+
+                <Label Text="Información del cliente"  TextTransform="Uppercase" FontSize="15" FontAttributes="Bold" Margin="50,0,0,0" />
+                <StackLayout Margin="50, 10">
+            
+             <Label Text="Nombre"/>
+            <Entry Placeholder="Nombre de el cliente" />
+            <Label Text="Apellido"/>
+            <Entry Placeholder="Apellido de el cliente"/>
+            <Label Text="Identificación"/>
+            <Entry Placeholder="Cedula, Pasaporte, otro"/>
+            <Label Text="Celular"/>
+            <Entry Placeholder="Numero Celular"/>
+            <Label Text="Telefono"/>
+            <Entry Placeholder="Telefono de la casa" Keyboard="Telephone"/>
+            <Label Text="Dirección"/>
+            <Entry Placeholder="Dirección del cliente"/>
+               
+                </StackLayout>
+                <Label Text=" Información del Garante"  TextTransform="Uppercase" FontSize="15" FontAttributes="Bold" Margin="50,0,0,0" />
+                <StackLayout Margin="50, 10">
+
+                    <Label Text="Nombre"/>
+                    <Entry Placeholder="Nombre de el cliente"/>
+                    <Label Text="Apellido"/>
+                    <Entry Placeholder="Apellido de el cliente"/>
+                    <Label Text="Identificación"/>
+                    <Entry Placeholder="Cedula, Pasaporte, otro"/>
+                    <Label Text="Celular"/>
+                    <Entry Placeholder="Numero Celular"/>
+                    <Label Text="Telefono"/>
+                    <Entry Placeholder="Telefono de la casa" Keyboard="Telephone"/>
+                    <Label Text="Dirección" />
+                    <Entry Placeholder="Dirección del cliente"  />
+                    <!--BoxView para regular el diseño de la interface-->
+                    <Button Text="Registrar cliente" Margin="20" HorizontalOptions="Center"/>
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

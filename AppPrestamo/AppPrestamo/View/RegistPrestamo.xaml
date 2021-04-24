@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Nuevo Prestamo" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPrestamo.View.RegistPrestamo">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Margin="50">
+                <Picker Title="Selecionar Cliente"></Picker>
+                <Label Text="Identificacion"/>
+                <Entry Placeholder="Cedula, Pasaporte, otro" IsReadOnly="True"/>
+                <Picker  x:Name="pikerTipoCobro"  Title="Selecione el tipo de cobro">
+                <Picker.Items>
+                    <x:String>Cobro Diario</x:String>
+                    <x:String>Cobro Semanal</x:String>
+                    <x:String>Cobro Quincenal</x:String>
+                    <x:String>Cobro Mensual</x:String>
+                    <x:String> Cobro Trimestral </x:String>
+                    <x:String>Cobro Aleatorio</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text="Fecha de Inicio"/>
+            <DatePicker x:Name="dateInicio" Format="dddd/MM/yyyy" ></DatePicker>
+            <Label Text="Fecha de Vencimiento"/>
+            <DatePicker x:Name="datefinal" Format="dddd/MM/yyyy" MinimumDate="2021/04/23"></DatePicker>
+            <Label Text="Capital"/>
+            <Entry  x:Name="entryCapital" Placeholder="Capital a prestar"/>
+            <Label Text="Interes"/>
+            <Entry  x:Name="entryInteres" Placeholder="interes del prestamo"/>
+            <Label Text="Numero de cuotas"/>
+                <Entry  x:Name="entryNCuotas" Placeholder="Numero de pagos a realizar"/>
+            <Label Text="Total"/>
+            <Entry x:Name="entryTotal" Placeholder="Total a pagar" IsReadOnly="True"/>
+            <Label Text="Valor de Cuota"/>
+                <Entry x:Name="entryVCuotas" Placeholder="Valor de cuota a pagar" IsReadOnly="True"/>
+            
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Imprimir recibo" />
+                    <Switch Grid.Column="1" HorizontalOptions="End"></Switch>
+                    <Button Clicked="calcularPrestamo" Text="Calcular" Grid.Row="1" Grid.Column="0"/>
+                    <Button Text="Guardar"  Grid.Row="1" Grid.Column="1" />
+                </Grid>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

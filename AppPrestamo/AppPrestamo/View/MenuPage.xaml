@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage  Title="  APP prestamo"  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPrestamo.View.MenuPage">
+
+
+
+    <StackLayout >
+       
+        <Grid ColumnSpacing="10" RowSpacing="10" Margin="20" >
+            <!--definicion de filas (Definition of row)-->
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <!--Definicion de columna (Definition of Column)-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ImageButton BorderColor="Black" BorderWidth=".5" Source="prestamo.png" Grid.Row="0" Grid.Column="0"/>
+            <ImageButton BorderColor="Black" BorderWidth=".5" Source="pago-en-efectivo.png" Grid.Row="0" Grid.Column="1"/>
+            <ImageButton BorderColor="Black" BorderWidth=".5" Source="cliente.png" Grid.Column="1" Grid.Row="1"/>
+            <ImageButton BorderColor="Black" BorderWidth=".5" Source="dineroCancelado.png"  Grid.Row="1" />
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

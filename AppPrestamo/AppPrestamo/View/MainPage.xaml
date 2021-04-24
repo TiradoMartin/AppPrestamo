@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPrestamo.MainPage"
+             xmlns:local="clr-namespace:AppPrestamo.View">
+
+   
+     <StackLayout>
+        <StackLayout  Margin="100,20">
+            <Image Source="Avatar.png" HeightRequest="200" ></Image>
+            <Label Text="Usuario"/>
+            <Entry x:Name="inputName"  Placeholder="Introdusca su nombre de usuario"/>
+            <Label Text="Contraseña" Margin="0,10,0,0"/>
+            <Entry x:Name="inputPass" Placeholder="Introdusca su contraseña" IsPassword="True" />
+        </StackLayout>
+        <!--Boton-->
+        <StackLayout  Margin="100,20">
+                <Button Clicked="Autentication" Text="Entrar"/>
+            </StackLayout>
+            
+        
+    </StackLayout>
+    
+
+</ContentPage>
