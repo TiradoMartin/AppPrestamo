@@ -17,7 +17,7 @@ namespace AppPrestamo.View
             InitializeComponent();
             
         }
-
+          
         private void calcularPrestamo(object sender, EventArgs e)
         {
             int capital = int.Parse(entryCapital.Text);
