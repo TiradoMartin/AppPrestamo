@@ -1,20 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppPrestamo.View.PrestamosPage">
-    <MasterDetailPage.Master>
-        <ContentPage Title="Master">
-            <StackLayout>
-                <Label  Text="hola mundo"/>
-            </StackLayout>
-        </ContentPage>
-    </MasterDetailPage.Master>
-    
-    <MasterDetailPage.Detail>
-        <ContentPage>
-            <StackLayout>
-                <Label Text="hola mundo detalle"/>
-            </StackLayout>
-        </ContentPage>
-    </MasterDetailPage.Detail>
-</MasterDetailPage>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  IconImageSource="plus.png" Clicked="AddPrestamo_Clicked" Text="Hola" Order="Primary"/>
+        <ToolbarItem IconImageSource="updated.png" Clicked="UpdateList_Clicked"/>
+
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        
+        <ListView x:Name="listViewPrestamo"
+                   
+                  HasUnevenRows="True"
+                  ItemSelected="listViewPrestamo_ItemSelected"
+                  IsPullToRefreshEnabled="True"
+                ItemsSource="{Binding prestam}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    
+                    <ViewCell>
+                        <Grid Margin="40">
+                            <Grid.RowDefinitions></Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            
+                            <Label Text="{Binding Id}" Grid.Column="0"/>
+                            <Label Text="{Binding IdtificacionCliente}" Grid.Column="1"/>
+                            <Label Text="{Binding Total}" Grid.Column="2"/>
+                            <Label Text="{Binding Interes}" Grid.Column="3"/>
+                            <Label Text="{Binding NumeroCuotas}" Grid.Column="4"/>
+                            <Label Text="{Binding ValorCuota}" Grid.Column="5"/>
+                            <Label Text="{Binding FechaInicial}" Grid.Column="6"/>
+                            <Label Text="{Binding FechaVencimiento}" Grid.Column="7"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+    </ListView>
+    </StackLayout>
+</ContentPage>

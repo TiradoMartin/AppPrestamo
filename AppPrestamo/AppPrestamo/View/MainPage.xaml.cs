@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace AppPrestamo
@@ -18,7 +13,7 @@ namespace AppPrestamo
         {
             string user = inputName.Text;
             string pass = inputPass.Text;
-            if (user == "Martin" && pass == "Martin") Navigation.PushModalAsync(new View.MenuPage());
+            if (user == "Martin" && pass == "Martin") Navigation.PushAsync(new View.MenuPage());
             else DisplayAlert("Aviso", "El usuario o la contraseña no es correcto. Por favor intentelo de nuevo", "Aceptar");
         }
     }

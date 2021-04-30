@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,5 +11,17 @@ namespace AppPrestamo.View
         {
             InitializeComponent();
         }
+
+        private void BtnPrestamoMenu_Clicked(object sender, System.EventArgs e)
+        {
+
+              Navigation.PushAsync(new PrestamosPage());
+        }
+
+        private void BtnClienteMenu_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new ClientePage());
+        }
     }
+
 }

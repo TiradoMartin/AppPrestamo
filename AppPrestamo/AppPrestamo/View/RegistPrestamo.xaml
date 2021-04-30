@@ -5,9 +5,10 @@
     <ContentPage.Content>
         <ScrollView>
         <StackLayout Margin="50">
-                <Picker Title="Selecionar Cliente"></Picker>
                 <Label Text="Identificacion"/>
-                <Entry Placeholder="Cedula, Pasaporte, otro" IsReadOnly="True"/>
+                <Entry x:Name="entryIdentificacion" Completed="entryIdentificacion_Completed"  Placeholder="Cedula, Pasaporte, otro"></Entry>
+                <Label Text="Nombre"/>
+                <Entry x:Name="entryClientNombre" Placeholder="Nombre del cliente" IsReadOnly="True"/>
                 <Picker  x:Name="pikerTipoCobro"  Title="Selecione el tipo de cobro">
                 <Picker.Items>
                     <x:String>Cobro Diario</x:String>
@@ -19,7 +20,7 @@
                 </Picker.Items>
             </Picker>
             <Label Text="Fecha de Inicio"/>
-            <DatePicker x:Name="dateInicio" Format="dddd/MM/yyyy" ></DatePicker>
+                <DatePicker x:Name="dateInicio"  Format="dddd/MM/yyyy" MinimumDate="2021/04/23" ></DatePicker>
             <Label Text="Fecha de Vencimiento"/>
             <DatePicker x:Name="datefinal" Format="dddd/MM/yyyy" MinimumDate="2021/04/23"></DatePicker>
             <Label Text="Capital"/>
@@ -44,8 +45,8 @@
                     </Grid.ColumnDefinitions>
                     <Label Text="Imprimir recibo" />
                     <Switch Grid.Column="1" HorizontalOptions="End"></Switch>
-                    <Button Clicked="calcularPrestamo" Text="Calcular" Grid.Row="1" Grid.Column="0"/>
-                    <Button Text="Guardar"  Grid.Row="1" Grid.Column="1" />
+                    <Button Clicked="CalcularPrestamo" Text="Calcular" Grid.Row="1" Grid.Column="0"/>
+                    <Button Text="Guardar" IsEnabled="False" x:Name="BtnCrearPrestamo" Clicked="BtnCrearPrestamo_Clicked"  Grid.Row="1" Grid.Column="1" />
                 </Grid>
                 
             </StackLayout>

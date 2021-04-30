@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AppPrestamo.Services
+﻿namespace AppPrestamo.Services
 {
-    interface IFileHelper
+    public interface IFileHelper
     {
+        string GetLocalFilePath(string fileName);
+
     }
 }

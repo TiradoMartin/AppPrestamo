@@ -12,38 +12,38 @@
 
                 <Label Text="Información del cliente"  TextTransform="Uppercase" FontSize="15" FontAttributes="Bold" Margin="50,0,0,0" />
                 <StackLayout Margin="50, 10">
-            
-             <Label Text="Nombre"/>
-            <Entry Placeholder="Nombre de el cliente" />
-            <Label Text="Apellido"/>
-            <Entry Placeholder="Apellido de el cliente"/>
-            <Label Text="Identificación"/>
-            <Entry Placeholder="Cedula, Pasaporte, otro"/>
-            <Label Text="Celular"/>
-            <Entry Placeholder="Numero Celular"/>
-            <Label Text="Telefono"/>
-            <Entry Placeholder="Telefono de la casa" Keyboard="Telephone"/>
-            <Label Text="Dirección"/>
-            <Entry Placeholder="Dirección del cliente"/>
-               
+
+                    <Label Text="Nombre"/>
+                    <Entry x:Name="nombreCliente" Placeholder="Nombre de el cliente"/>
+                    <Label  Text="Apellido"/>
+                    <Entry x:Name="apellCliente" Placeholder="Apellido de el cliente"/>
+                    <Label Text="Identificación"/>
+                    <Entry x:Name="CedulaCliente" Placeholder="Cedula, Pasaporte, otro"/>
+                    <Label Text="Celular"/>
+                    <Entry x:Name="celularCliente" Placeholder="Numero Celular"/>
+                    <Label Text="Telefono"/>
+                    <Entry x:Name="telefonoCliente" Placeholder="Telefono de la casa" Keyboard="Telephone"/>
+                    <Label Text="Dirección" />
+                    <Entry x:Name="direccionCliente" Placeholder="Dirección del cliente"  />
+
                 </StackLayout>
                 <Label Text=" Información del Garante"  TextTransform="Uppercase" FontSize="15" FontAttributes="Bold" Margin="50,0,0,0" />
                 <StackLayout Margin="50, 10">
 
                     <Label Text="Nombre"/>
-                    <Entry Placeholder="Nombre de el cliente"/>
-                    <Label Text="Apellido"/>
-                    <Entry Placeholder="Apellido de el cliente"/>
-                    <Label Text="Identificación"/>
-                    <Entry Placeholder="Cedula, Pasaporte, otro"/>
+                    <Entry x:Name="nombreGarante" Placeholder="Nombre de el cliente"/>
+                    <Label  Text=" Apellido"/>
+                    <Entry x:Name="apellGarante" Placeholder="Apellido de el cliente"/>
+                    <Label Text="  Identificación"/>
+                    <Entry x:Name="CedulaGarante" Placeholder="Cedula, Pasaporte, otro"/>
                     <Label Text="Celular"/>
-                    <Entry Placeholder="Numero Celular"/>
+                    <Entry x:Name="celularGarante" Placeholder="Numero Celular"/>
                     <Label Text="Telefono"/>
-                    <Entry Placeholder="Telefono de la casa" Keyboard="Telephone"/>
+                    <Entry x:Name="telefonoGarante" Placeholder="Telefono de la casa" Keyboard="Telephone"/>
                     <Label Text="Dirección" />
-                    <Entry Placeholder="Dirección del cliente"  />
+                    <Entry x:Name="direccionGarante" Placeholder="Dirección del cliente"  />
                     <!--BoxView para regular el diseño de la interface-->
-                    <Button Text="Registrar cliente" Margin="20" HorizontalOptions="Center"/>
+                    <Button Text="Registrar cliente" x:Name="BtnRegistrarCliente" Clicked="BtnRegistrarCliente_Clicked" Margin="20" HorizontalOptions="Center"/>
 
                 </StackLayout>
             </StackLayout>

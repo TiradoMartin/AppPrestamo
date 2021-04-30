@@ -1,20 +1,19 @@
 ﻿using AppPrestamo.View;
-using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace AppPrestamo
 {
     public partial class App : Application
     {
+
         public App()
         {
             InitializeComponent();
-            NavigationPage navPage = new NavigationPage(new RegistPrestamo());
+            NavigationPage navPage = new NavigationPage(new MainPage());
             navPage.BarTextColor = Color.White;
             navPage.BarBackgroundColor = Color.Black;
             navPage.Title = "APP PRESTAMO";
-           
+
 
 
             MainPage = navPage;
@@ -31,5 +30,6 @@ namespace AppPrestamo
         protected override void OnResume()
         {
         }
+
     }
 }
