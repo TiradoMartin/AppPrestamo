@@ -7,6 +7,8 @@ namespace AppPrestamo.Data
 {
     public class PrestamoDataBase
     {
+
+
         private readonly SQLiteAsyncConnection dataBase;
 
         public PrestamoDataBase(string dbPath)
@@ -15,6 +17,7 @@ namespace AppPrestamo.Data
             dataBase.CreateTableAsync<Prestamo>().Wait();
             dataBase.CreateTableAsync<Cliente>().Wait();
             dataBase.CreateTableAsync<Pago>().Wait();
+
         }
 
         //Metodos Get de la base da datos prestamodb
@@ -24,14 +27,20 @@ namespace AppPrestamo.Data
             return dataBase.Table<Cliente>().ToListAsync();
         }
 
-        public async Task<List<Prestamo>> GetPrestamosAsync()
+        public Task<List<Prestamo>> GetPrestamosAsync(string ident = "ident")
         {
-            return await dataBase.Table<Prestamo>().ToListAsync();
+            if (ident == "ident") return dataBase.Table<Prestamo>().Where(i => i.IsActive == true).ToListAsync();
+            else return dataBase.Table<Prestamo>().Where(i => i.IdtificacionCliente == ident && i.IsActive ).ToListAsync();
         }
 
-        public async Task<List<Pago>> GetPagosAsync()
+        public Task<List<Prestamo>> GetPrestamosCanceladosAsync(string ident = "ident")
         {
-            return await dataBase.Table<Pago>().ToListAsync();
+            if (ident == "ident") return dataBase.Table<Prestamo>().Where(i => !i.IsActive).ToListAsync();
+            else return dataBase.Table<Prestamo>().Where(i => i.IdtificacionCliente == ident && !i.IsActive).ToListAsync();
+        }
+        public async Task<List<Pago>> GetPagosAsync(int prestID)
+        {
+            return await dataBase.Table<Pago>().Where(I => I.IdPrestamo == prestID).ToListAsync(); ;
         }
 
         public Task<Cliente> GetClienteAsync(string ident)
@@ -39,6 +48,9 @@ namespace AppPrestamo.Data
             return dataBase.Table<Cliente>()
                 .Where(i => i.Identificacion == ident).FirstOrDefaultAsync();
         }
+
+
+
         //Metodo Udate and Create
 
         public Task<int> CreateAndUdateClienteAsync(Cliente cliente)

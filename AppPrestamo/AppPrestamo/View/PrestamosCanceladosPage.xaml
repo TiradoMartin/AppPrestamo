@@ -1,27 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppPrestamo.View.PrestamosPage"
-             Title="Prestamos">
-
+             x:Class="AppPrestamo.View.PrestamosCanceladosPage"
+             Title="Prestamos cancelados">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Agregar nuevo prestamo" IconImageSource="plus.png" Clicked="AddPrestamo_Clicked"  Order="Primary"/>
-        <ToolbarItem Text="      Actualizar "  IconImageSource="update.png" Clicked="UpdateList_Clicked"/>
-        <ToolbarItem Text="         Buscar prestamo" IconImageSource="search.png" x:Name="Buscar" Clicked="Buscar_Clicked"></ToolbarItem>
+
+        <ToolbarItem   Text=" Actualizar "  IconImageSource="update.png" Clicked="UdateList_Clicked" />
+        <ToolbarItem Text="Buscar prestamo" IconImageSource="search.png" x:Name="Buscar" Clicked="Buscar_Clicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <StackLayout Margin="10">
-        <SearchBar x:Name="searchBarPrestamo" IsVisible="False" SearchButtonPressed="SearchBarPrestamo_SearchButtonPressed"/>
-        <ListView x:Name="listViewPrestamo"
-                  ItemSelected="listViewPrestamo_ItemSelected"
+        <SearchBar x:Name="searchBarPrestamoCancelados" IsVisible="False" SearchButtonPressed="searchBarPrestamo_SearchButtonPressed"/>
+        <ListView x:Name="listViewPrestamoCancelados"
+                  ItemSelected="listViewPrestamoCancelados_ItemSelected"
                   Header="Prestamo"
                   SeparatorVisibility="Default"
                   SeparatorColor="Black"
                    HasUnevenRows="True"
                   RowHeight="40"
                   >
-           
-     
-         <ListView.HeaderTemplate>
+
+
+            <ListView.HeaderTemplate>
                 <DataTemplate>
                     <Grid   Padding="10" BackgroundColor="MediumSlateBlue" >
                         <Grid.ColumnDefinitions>
@@ -39,7 +38,7 @@
                         <Label TextColor="White" Text="Monto C" Grid.Column="4" FontAttributes="Bold"/>
                         <Label TextColor="White" Text="Inicio" Grid.Column="5" FontAttributes="Bold"/>
                         <Label TextColor="White" Text="Vencimiento" Grid.Column="6" FontAttributes="Bold"/>
-                    </Grid>    
+                    </Grid>
                 </DataTemplate>
             </ListView.HeaderTemplate>
             <ListView.ItemTemplate>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPrestamo.View.PrestamoDetallePage"
+             Title=" Detalle de prestamo">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="50">
+                <Label Text="Identificacion"/>
+                <Entry IsReadOnly="True" x:Name="entryIdentificacion"   Placeholder="Cedula, Pasaporte, otro"></Entry>
+                <Label Text="Nombre"/>
+                <Entry  x:Name="entryClientNombre" Placeholder="Nombre del cliente" IsReadOnly="True"/>
+                <Picker  x:Name="pikerTipoCobro"  Title="Selecione el tipo de cobro">
+                    <Picker.Items>
+                        <x:String>Cobro Diario</x:String>
+                        <x:String>Cobro Semanal</x:String>
+                        <x:String>Cobro Quincenal</x:String>
+                        <x:String>Cobro Mensual</x:String>
+                        <x:String>Cobro Trimestral</x:String>
+                        <x:String>Cobro Aleatorio</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Text="Fecha de Inicio"/>
+                <DatePicker x:Name="dateInicio"  Format="dddd/MM/yyyy" MinimumDate="2021/04/23" ></DatePicker>
+                <Label Text="Fecha de Vencimiento"/>
+                <DatePicker x:Name="datefinal" Format="dddd/MM/yyyy" MinimumDate="2021/04/23"></DatePicker>
+                <Label Text="Capital prestado"/>
+                <Entry IsReadOnly="True" x:Name="entryCapital" Placeholder="Capital a prestar"/>
+                <Label Text="Interes"/>
+                <Entry IsReadOnly="True" x:Name="entryInteres" Placeholder="interes del prestamo"/>
+                <Label Text="Número de cuotas a pagar al inicio de la deuda"/>
+                <Entry IsReadOnly="True"  x:Name="entryNCuotas" Placeholder="Numero de pagos a realizar"/>
+                <Label Text="Monto tatal a pagar al inicio de la deuda"/>
+                <Entry  x:Name="entryTotal" Placeholder="Total a pagar" IsReadOnly="True"/>
+                <Label Text="Valor de Cuota"/>
+                <Entry  x:Name="entryVCuotas" Placeholder="Valor de cuota a pagar" IsReadOnly="True"/>
+                <!--Campos del calculo de pagos-->
+                <Label Text="Total de cuotas pagadas"/>
+                <Entry  x:Name="entryCuotasPagadas" Placeholder="Numero de cuotas pagadas" IsReadOnly="True"/>
+                <Label Text="Monto pagado hasta la fecha"/>
+                <Entry  x:Name="entryTotalPagado" Placeholder="monto pagado" IsReadOnly="True"/>
+                <Label Text="Total de la deuda hasta la fecha"/>
+                <Entry  x:Name="entryDeudaRestante" Placeholder="Total de la deuda" IsReadOnly="True"/>
+
+
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Imprimir recibo" IsVisible="False"/>
+                    <Switch Grid.Column="1" HorizontalOptions="End" IsVisible="False"></Switch>
+                    <Button  Text="Realizar pago" Clicked="BtnPagos_Clicked"  Grid.Row="1" Grid.Column="0"/>
+                    <Button Text="Guardar" IsEnabled="False" IsVisible="False" Grid.Row="1" Grid.Column="1" />
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

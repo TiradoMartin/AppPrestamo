@@ -12,15 +12,25 @@ namespace AppPrestamo.View
             InitializeComponent();
         }
 
-        private void BtnPrestamoMenu_Clicked(object sender, System.EventArgs e)
+        private async void BtnPrestamoMenu_Clicked(object sender, System.EventArgs e)
         {
 
-              Navigation.PushAsync(new PrestamosPage());
+             await Navigation.PushAsync(new PrestamosPage());
         }
 
-        private void BtnClienteMenu_Clicked(object sender, System.EventArgs e)
+        private async void BtnClienteMenu_Clicked(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new ClientePage());
+             await Navigation.PushAsync(new ClientePage());
+        }
+
+        private async void BtnPrestamoCancelado_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new PrestamosCanceladosPage());
+        }
+
+        private  async void BtnPagosMenu_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new PagosPage());
         }
     }
 

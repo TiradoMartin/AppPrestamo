@@ -145,5 +145,6 @@
     <Content Include="Resources\pago-en-efectivo.png" />
     <Content Include="Resources\plus.png" />
     <Content Include="Resources\prestamo.png" />
+    <Content Include="Resources\search.png" />
   </ItemGroup>
 </Project>

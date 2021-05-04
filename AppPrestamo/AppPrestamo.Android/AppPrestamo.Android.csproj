@@ -104,6 +104,7 @@
     <Content Include="Resources\drawable\plus.png" />
     <Content Include="Resources\drawable\prestamo.png" />
     <BundleResource Include="Resources\drawable\updated.png" />
+    <Content Include="Resources\drawable\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

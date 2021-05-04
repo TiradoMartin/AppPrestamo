@@ -8,6 +8,6 @@ namespace AppPrestamo.Model
         [Indexed]
         public int IdPrestamo { get; set; }
         public int CantidadDePagos { get; set; }
-        public int MontoPagado { get; set; }
+        public float MontoPagado { get; set; }
     }
 }

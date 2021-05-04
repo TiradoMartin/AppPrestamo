@@ -134,11 +134,12 @@
     <Content Include="Avatar.png" />
     <Content Include="cliente.png" />
     <Content Include="dineroCancelado.png" />
+    <Content Include="search.png" />
     <Content Include="pago-en-efectivo.png" />
     <Content Include="plus.png" />
     <Content Include="prestamo.png" />
     <Content Include="Properties\Default.rd.xml" />
-    <BundleResource Include="updated.png" />
+    <Content Include="update.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

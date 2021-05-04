@@ -10,16 +10,38 @@ namespace AppPrestamo.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistClientePage : ContentPage
     {
+        Cliente cliente = new Cliente();
         public RegistClientePage()
         {
             InitializeComponent();
         }
 
+        public RegistClientePage(Cliente cliente)
+        {
+
+            InitializeComponent();
+            this.cliente.Id = cliente.Id;
+            nombreCliente.Text = cliente.Nombre;
+           apellCliente.Text = cliente.Apellido;
+            celularCliente.Text= cliente.Celular;
+            telefonoCliente.Text = cliente.Telefono;
+            direccionCliente.Text = cliente.Direccion;
+            CedulaCliente.Text= cliente.Identificacion;
+            //Datos del Garante
+             nombreGarante.Text= cliente.NombreGarante;
+            apellGarante.Text = cliente.ApellidoGarante;
+            celularGarante.Text= cliente.CelularGarante;
+            telefonoGarante.Text = cliente.TelefonoGarante;
+            direccionGarante.Text = cliente.DireccionGarante;
+            CedulaGarante.Text = cliente.IdentificacionGarante;
+
+
+        }
         private void BtnRegistrarCliente_Clicked(object sender, EventArgs e)
         {
             if (nombreCliente.Text != null || apellCliente.Text != null || CedulaCliente.Text != null)
             {
-                Cliente cliente = new Cliente();
+                
                 cliente.Nombre = nombreCliente.Text;
                 cliente.Apellido = apellCliente.Text;
                 cliente.Celular = celularCliente.Text;
@@ -43,19 +65,19 @@ namespace AppPrestamo.View
 
         public void MenssageAndResetControl()
         {
-            nombreCliente.Text="";
-             apellCliente.Text="";
-             celularCliente.Text ="";
-            telefonoCliente.Text="";
-             direccionCliente.Text="";
-            CedulaCliente.Text="";
-            nombreGarante.Text="";
-            apellGarante.Text ="";
-            celularGarante.Text="";
-            telefonoGarante.Text="";
-            direccionGarante.Text="";
-             CedulaGarante.Text="";
+            nombreCliente.Text = "";
+            apellCliente.Text = "";
+            celularCliente.Text = "";
+            telefonoCliente.Text = "";
+            direccionCliente.Text = "";
+            CedulaCliente.Text = "";
+            nombreGarante.Text = "";
+            apellGarante.Text = "";
+            celularGarante.Text = "";
+            telefonoGarante.Text = "";
+            direccionGarante.Text = "";
+            CedulaGarante.Text = "";
             DisplayAlert("Aviso", "El cliente se a guardado correctamente", "Ok");
-        }                            
+        }
     }
 }

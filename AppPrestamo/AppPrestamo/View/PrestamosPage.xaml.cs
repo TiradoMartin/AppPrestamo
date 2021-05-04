@@ -1,6 +1,5 @@
 ﻿
 using AppPrestamo.Model;
-using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,17 +12,17 @@ namespace AppPrestamo.View
         public PrestamosPage()
         {
             InitializeComponent();
-            
-            repository();
+
+            RepositoryPrestamo();
         }
 
-       async void repository()
+        async void RepositoryPrestamo()
         {
-            
-             /*  client= await listPrestamo.LeerPrestamos();
-           var v= client[0];*/
-           listViewPrestamo.ItemsSource = await listPrestamo.LeerPrestamos();
-           
+
+            /*  client= await listPrestamo.LeerPrestamos();
+          var v= client[0];*/
+            listViewPrestamo.ItemsSource = await listPrestamo.LeerPrestamos();
+
         }
 
         private void AddPrestamo_Clicked(object sender, System.EventArgs e)
@@ -31,14 +30,29 @@ namespace AppPrestamo.View
             Navigation.PushAsync(new RegistPrestamo());
         }
 
-        private void listViewPrestamo_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void listViewPrestamo_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            Prestamo prestamo = new Prestamo();
+               prestamo = (Prestamo)listViewPrestamo.SelectedItem;
+            Navigation.PushAsync(new PrestamoDetallePage(prestamo));
         }
 
         private void UpdateList_Clicked(object sender, System.EventArgs e)
         {
-            repository();
+            RepositoryPrestamo();
+        }
+
+        private void Buscar_Clicked(object sender, System.EventArgs e)
+        {
+            searchBarPrestamo.IsVisible = !searchBarPrestamo.IsVisible;
+        }
+
+        private async void SearchBarPrestamo_SearchButtonPressed(object sender, System.EventArgs e)
+        {
+            if (searchBarPrestamo.Text != "")
+            { listViewPrestamo.ItemsSource = await listPrestamo.LeerPrestamos(searchBarPrestamo.Text); }
+
+
         }
     }
 }

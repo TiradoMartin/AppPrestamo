@@ -1,5 +1,4 @@
-﻿using AppPrestamo.View;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace AppPrestamo
 {

@@ -8,7 +8,7 @@ namespace AppPrestamo.Model
 {
     class PrestamoRepository
     {
-       
+
 
 
         public static PrestamoDataBase dataBase;
@@ -40,7 +40,7 @@ namespace AppPrestamo.Model
         //Registro y Actualizacion 
         public async void RegistrarCliente(Cliente client)
         {
-            _ = DataBase;
+
             await dataBase.CreateAndUdateClienteAsync(client);
         }
 
@@ -49,7 +49,18 @@ namespace AppPrestamo.Model
 
             await dataBase.CreateAndUdatePrestamo(prestam);
         }
+        public async void RegistrarPago(Pago pago)
+        {
+
+            await dataBase.CreateAndUdatePago( pago);
+        }
+
         // Leer
+
+        public async Task<List<Pago>> LeerPagos(int PrestID)
+        {
+            return await dataBase.GetPagosAsync(PrestID);
+        }
         public async Task<List<Cliente>> LeerClientes()
         {
 
@@ -61,10 +72,14 @@ namespace AppPrestamo.Model
 
             return await dataBase.GetClienteAsync(indet);
         }
-        public Task<List<Prestamo>> LeerPrestamos()
+        public Task<List<Prestamo>> LeerPrestamos(string ident = "ident")
         {
-            return dataBase.GetPrestamosAsync();
+            return dataBase.GetPrestamosAsync(ident);
 
+        }
+        public Task<List<Prestamo>> LeerPrestamosCancelados(string ident = "ident")
+        {
+            return dataBase.GetPrestamosCanceladosAsync(ident);
         }
 
     }

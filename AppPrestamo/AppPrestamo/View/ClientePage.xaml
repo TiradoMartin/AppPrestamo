@@ -1,14 +1,80 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppPrestamo.View.ClientePage">
+             x:Class="AppPrestamo.View.ClientePage"
+             Title=" Clientes">
    
         
         <ContentPage.ToolbarItems>
-            
-            <ToolbarItem  IconImageSource="plus.png" Clicked="AddCliente_Clicked"  Order="Primary">
 
-            </ToolbarItem>
-        </ContentPage.ToolbarItems>
-      
+        <ToolbarItem Text="Agregar nuevo cliente" IconImageSource="plus.png" Clicked="AddCliente_Clicked"  Order="Primary">
+        </ToolbarItem>
+        <ToolbarItem Text="Actualizar la lista de cliente" x:Name="ActualizarCliente" IconImageSource="update.png" Clicked="ActualizarCliente_Clicked" >
+        </ToolbarItem>
+        <ToolbarItem Text="Buscar cliente" x:Name="Buscar" IconImageSource="search.png" Clicked="Buscar_Clicked" >
+        </ToolbarItem>
+        
+    </ContentPage.ToolbarItems>
+    
+    <StackLayout Margin="10">
+        <SearchBar IsVisible="False" x:Name="SearchBarCliente" SearchButtonPressed="SearchBarCliente_SearchButtonPressed"/>
+        <ListView x:Name="listViewCliente"
+                  ItemSelected="listViewCliente_ItemSelected"
+                  Header="Cliente"
+                  SeparatorVisibility="Default"
+                  SeparatorColor="Black"
+                  RowHeight="40"
+              >
+
+
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid   Padding="10" BackgroundColor="MediumSlateBlue" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label TextColor="White" Text="Identificacion" Grid.Column="0" FontAttributes="Bold"/>
+                        <Label TextColor="White" Text="Nombre" Grid.Column="1" FontAttributes="Bold"/>
+                        <Label TextColor="White" Text="Apellido" Grid.Column="2" FontAttributes="Bold"/>
+                        <Label TextColor="White" Text="Celular" Grid.Column="3" FontAttributes="Bold"/>
+                        <Label TextColor="White" Text="Telefono" Grid.Column="4" FontAttributes="Bold"/>
+                        <Label TextColor="White" Text="Direccion" Grid.Column="5" FontAttributes="Bold"/>
+                       
+                    </Grid>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <ViewCell>
+                        <Grid  Padding="0" Margin="5" >
+                            <Grid.RowDefinitions></Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                
+                            </Grid.ColumnDefinitions>
+
+            
+                            <Label Text="{Binding Identificacion}" Grid.Column="0"/>
+                            <Label Text="{Binding Nombre}" Grid.Column="1"/>
+                            <Label Text="{Binding Apellido}" Grid.Column="2"/>
+                            <Label Text="{Binding Celular}" Grid.Column="3"/>
+                            <Label Text="{Binding Telefono}" Grid.Column="4"/>
+                            <Label Text="{Binding Direccion}" Grid.Column="5"/>
+                         
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </StackLayout>
 </ContentPage>

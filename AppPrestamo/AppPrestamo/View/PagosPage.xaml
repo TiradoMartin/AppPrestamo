@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPrestamo.View.PagosPage"
+             Title=" Pagos">
+    <ContentPage.Content>
+        <StackLayout Margin="40">
+            <Label Text="Identificador del prestamos"/>
+            <Entry x:Name="entryIdPrestamo" Placeholder="Numero de identificación del prestamo"/>
+            <Label Text="Numero de pagos a realizar"/>
+            <Entry  x:Name="entryNcuotas" Placeholder="Numero de cuotas a pagar"/>
+            <Label Text="Monto a pagar"/>
+            <Entry x:Name="entryMonto" Placeholder="Monto a pagar"/>
+
+            <Button Text="Realizar pago" Clicked="BtnPago_Clicked"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
