@@ -11,6 +11,8 @@
             <Entry  x:Name="entryNcuotas" Placeholder="Numero de cuotas a pagar"/>
             <Label Text="Monto a pagar"/>
             <Entry x:Name="entryMonto" Placeholder="Monto a pagar"/>
+            <Label Text="Inprimir"/>
+            <Switch x:Name="SwitchPago" Toggled="SwitchPago_Toggled"/>
 
             <Button Text="Realizar pago" Clicked="BtnPago_Clicked"/>
 

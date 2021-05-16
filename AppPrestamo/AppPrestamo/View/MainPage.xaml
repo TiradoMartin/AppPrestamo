@@ -7,7 +7,7 @@
    
      <StackLayout>
         <StackLayout  Margin="100,20">
-            <Image Source="Avatar.png" HeightRequest="200" ></Image>
+            <Image  x:Name="img" Source="/Avatar.png" HeightRequest="200" ></Image>
             <Label Text="Usuario"/>
             <Entry x:Name="inputName"  Placeholder="Introdusca su nombre de usuario"/>
             <Label Text="Contraseña" Margin="0,10,0,0"/>

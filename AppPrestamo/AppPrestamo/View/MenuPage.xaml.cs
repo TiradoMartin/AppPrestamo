@@ -32,6 +32,7 @@ namespace AppPrestamo.View
         {
             await Navigation.PushAsync(new PagosPage());
         }
+
     }
 
 }

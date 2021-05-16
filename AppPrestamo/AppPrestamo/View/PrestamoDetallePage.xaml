@@ -6,6 +6,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="50">
+              
                 <Label Text="Identificacion"/>
                 <Entry IsReadOnly="True" x:Name="entryIdentificacion"   Placeholder="Cedula, Pasaporte, otro"></Entry>
                 <Label Text="Nombre"/>
@@ -24,6 +25,7 @@
                 <DatePicker x:Name="dateInicio"  Format="dddd/MM/yyyy" MinimumDate="2021/04/23" ></DatePicker>
                 <Label Text="Fecha de Vencimiento"/>
                 <DatePicker x:Name="datefinal" Format="dddd/MM/yyyy" MinimumDate="2021/04/23"></DatePicker>
+                <ActivityIndicator x:Name="printActivity" IsRunning="False"/>
                 <Label Text="Capital prestado"/>
                 <Entry IsReadOnly="True" x:Name="entryCapital" Placeholder="Capital a prestar"/>
                 <Label Text="Interes"/>

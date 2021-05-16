@@ -15,6 +15,7 @@ namespace AppPrestamo
             string pass = inputPass.Text;
             if (user == "Martin" && pass == "Martin") Navigation.PushAsync(new View.MenuPage());
             else DisplayAlert("Aviso", "El usuario o la contraseña no es correcto. Por favor intentelo de nuevo", "Aceptar");
+            _=img.Source;
         }
     }
 }

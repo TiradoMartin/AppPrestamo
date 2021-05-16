@@ -32,9 +32,9 @@ namespace AppPrestamo.View
 
         private async void listViewPrestamo_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Prestamo prestamo = new Prestamo();
+           Prestamo prestamo = new Prestamo();
                prestamo = (Prestamo)listViewPrestamo.SelectedItem;
-            Navigation.PushAsync(new PrestamoDetallePage(prestamo));
+           await Navigation.PushAsync(new PrestamoDetallePage(prestamo));
         }
 
         private void UpdateList_Clicked(object sender, System.EventArgs e)

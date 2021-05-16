@@ -1,4 +1,5 @@
 ﻿using AppPrestamo.Model;
+using AppPrestamo.Services;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,6 +12,7 @@ namespace AppPrestamo.View
 
 
         Prestamo prestamo = new Prestamo();
+        FacturaPrestamo factura = new FacturaPrestamo();
         PrestamoRepository registrarPrestamo = new PrestamoRepository();
         string mensaje = "Por favor verifique que los " +
             "campos del formulario no esten vacios  ";
@@ -54,6 +56,14 @@ namespace AppPrestamo.View
             entryNCuotas.Text = ""; entryVCuotas.Text = ""; entryTotal.Text = "";
             DisplayAlert("Aviso", "Prestamo registrado", "Ok");
 
+            if (factura.print) { factura = (FacturaPrestamo)prestamo;
+                factura.totalCuotasPagadas = 0; factura.montoPagado= 0;factura.deudaRestante = prestamo.Total;
+                PrintFile print = new PrintFile(factura);
+                print.Printing();
+            
+            }
+
+
         }
 
         private async void entryIdentificacion_Completed(object sender, EventArgs e)
@@ -65,8 +75,9 @@ namespace AppPrestamo.View
                 if (client != null)
                 {
 
-                    entryClientNombre.Text = client.Nombre;
+                    entryClientNombre.Text = client.Nombre + " " + client.Apellido;
                     prestamo.IdtificacionCliente = client.Identificacion;
+                    factura.nombreCliente = client.Nombre + " " + client.Apellido;
                 }
                 else await DisplayAlert("Aviso", "No se encontro el cliente", "Ok");
 
@@ -77,6 +88,11 @@ namespace AppPrestamo.View
 
 
 
+        }
+
+        private void SwitchPrint_Toggled(object sender, ToggledEventArgs e)
+        {
+            factura.print = !factura.print;
         }
     }
 }
